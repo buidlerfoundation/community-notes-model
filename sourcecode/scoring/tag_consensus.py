@@ -70,8 +70,8 @@ def train_tag_model(
 def prepare_tag_data(
   allRatings: pd.DataFrame,
   tagName: str = c.notHelpfulIncorrectTagKey,
-  minNumRatingsPerRater: int = 10,
-  minNumRatersPerNote: int = 5,
+  minNumRatingsPerRater: int = 2,
+  minNumRatersPerNote: int = 1,
 ):
   ratings = allRatings.loc[
     allRatings[c.createdAtMillisKey] >= c.lastRatingTagsChangeTimeMillis

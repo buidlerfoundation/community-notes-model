@@ -90,9 +90,9 @@ class MFBaseScorer(Scorer):
     self,
     seed: Optional[int] = None,
     pseudoraters: Optional[bool] = True,
-    minNumRatingsPerRater: int = 10,
-    minNumRatersPerNote: int = 5,
-    minRatingsNeeded: int = 5,
+    minNumRatingsPerRater: int = 2,
+    minNumRatersPerNote: int = 1,
+    minRatingsNeeded: int = 1,
     minMeanNoteScore: float = 0.05,
     minCRHVsCRNHRatio: float = 0.00,
     minRaterAgreeRatio: float = 0.66,
@@ -369,7 +369,7 @@ class MFBaseScorer(Scorer):
       )
     if self._saveIntermediateState:
       self.firstRoundScoredNotes = scoredNotes
-
+    
     # Determine "valid" ratings
     with self.time_block("Compute valid ratings"):
       validRatings = note_ratings.get_valid_ratings(

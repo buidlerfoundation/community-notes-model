@@ -295,7 +295,7 @@ noteTSVColumnsAndTypes = (
     (noteIdKey, np.int64),
     (noteAuthorParticipantIdKey, object),
     (createdAtMillisKey, np.int64),
-    (tweetIdKey, np.int64),
+    (tweetIdKey, np.string_),
     (classificationKey, object),
     ("believable", object),
     ("harmful", object),
@@ -327,7 +327,7 @@ ratingTSVColumnsAndTypes = (
   ]
   + helpfulTagsAndTypesTSVOrder
   + notHelpfulTagsAndTypesTSVOrder
-  + [(ratedOnTweetIdKey, np.int64)]
+  + [("ratedOnTweetId", np.string_)]
 )
 
 ratingTSVColumns = [col for (col, dtype) in ratingTSVColumnsAndTypes]

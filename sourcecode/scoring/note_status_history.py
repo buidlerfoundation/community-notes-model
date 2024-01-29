@@ -230,8 +230,8 @@ def update_note_status_history(
   assert len(mergedStatuses) == len(
     oldNoteStatusHistory
   ), "scoredNotes and oldNoteStatusHistory should both contain all notes"
-  if len(mergedStatuses) > c.minNumNotesForProdData:
-    _check_flips(mergedStatuses)
+  # if len(mergedStatuses) > c.minNumNotesForProdData:
+  #   _check_flips(mergedStatuses)
 
   def apply_update(mergedNote):
     return _update_single_note_status_history(

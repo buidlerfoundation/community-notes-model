@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# source communitynotes_env/bin/activate
+
 """Invoke Community Notes scoring and user contribution algorithms.
 
 Example Usage:
@@ -19,7 +21,14 @@ Example Usage:
     --status data/noteStatusHistory-00000.tsv \
     --outdir data
 """
-
+"""
+python main.py \
+    --enrollment '$path/user.csv' \
+    --notes '$path/note.csv' \
+    --ratings '$path/rating.csv' \
+    --status '$path/status.csv' \
+    --outdir '$path'
+"""
 from scoring.runner import main
 
 
