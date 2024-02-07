@@ -491,27 +491,27 @@ def compute_scored_notes(
           crhSuperThreshold,
           minRatingsNeeded,
         ),
-        # scoring_rules.FilterIncorrect(
-        #   RuleID.INCORRECT_OUTLIER,
-        #   {RuleID.TAG_OUTLIER},
-        #   c.needsMoreRatings,
-        #   tagThreshold=2,
-        #   voteThreshold=3,
-        #   weightedTotalVotes=2.5,
-        #   superThreshold=None,
-        # ),
-        # scoring_rules.FilterLowDiligence(
-        #   RuleID.LOW_DILIGENCE,
-        #   {RuleID.INCORRECT_OUTLIER},
-        #   c.needsMoreRatings,
-        #   interceptThreshold=0.217,
-        # ),
-        # scoring_rules.FilterLargeFactor(
-        #   RuleID.LARGE_FACTOR,
-        #   {RuleID.LOW_DILIGENCE},
-        #   c.needsMoreRatings,
-        #   factorThreshold=0.5,
-        # ),
+        scoring_rules.FilterIncorrect(
+          RuleID.INCORRECT_OUTLIER,
+          {RuleID.TAG_OUTLIER},
+          c.needsMoreRatings,
+          tagThreshold=2,
+          voteThreshold=3,
+          weightedTotalVotes=2.5,
+          superThreshold=None,
+        ),
+        scoring_rules.FilterLowDiligence(
+          RuleID.LOW_DILIGENCE,
+          {RuleID.INCORRECT_OUTLIER},
+          c.needsMoreRatings,
+          interceptThreshold=0.217,
+        ),
+        scoring_rules.FilterLargeFactor(
+          RuleID.LARGE_FACTOR,
+          {RuleID.LOW_DILIGENCE},
+          c.needsMoreRatings,
+          factorThreshold=0.5,
+        ),
       ]
     )
   scoredNotes = scoring_rules.apply_scoring_rules(
