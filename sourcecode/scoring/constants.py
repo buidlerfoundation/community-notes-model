@@ -28,7 +28,7 @@ minNumNotesForProdData = 200
 minRatingsToGetTag = 2
 minTagsNeededForStatus = 2
 tagPercentileForNormalization = 40
-intervalHalfWidth = 0.35
+intervalHalfWidth = 0.3
 
 # Data Filenames
 scoredNotesOutputPath = "scoredNotes.tsv"
